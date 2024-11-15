@@ -1,4 +1,4 @@
-import express, { Request, Response, Application } from "express";
+import express, { Request, Response } from "express";
 import products from "./data/products";
 
 const app = express();
