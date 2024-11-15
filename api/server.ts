@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 dotenv.config();
 import products from "./data/products";
+import { connectDB } from "./config/db";
 
 const PORT = process.env.PORT || 8000
 
@@ -15,3 +16,5 @@ app.get("/api/products/:id", (req: Request, res: Response): any => {
 });;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
+connectDB()
