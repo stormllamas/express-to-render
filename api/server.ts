@@ -1,20 +1,18 @@
 import express, { Request, Response } from "express";
+import { connectDB } from "./config/db";
+import products from "./data/products";
+import productRoutes from "./routes/productRoutes";
 import dotenv from "dotenv";
 dotenv.config();
-import products from "./data/products";
-import { connectDB } from "./config/db";
 
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 8000;
+
+connectDB();
 
 const app = express();
 
-app.get("/", (req: Request, res: Response): any => res.json(products));
+app.use("/api/products", productRoutes);
 
-app.get("/api/products/:id", (req: Request, res: Response): any => {
-  const product = products.find((p) => p._id === req.params.id);
-  return res.json(product);
-});;
-
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-
-connectDB()
+app.listen(PORT, () =>
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
+);
