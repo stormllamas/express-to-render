@@ -8,11 +8,14 @@
     "start": "npx tsx api/server.ts",
     "server": "nodemon -e ts  --exec \"npx tsx api/server.ts\"",
     "client": "npm start frontend --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "npx tsx api/seeder.ts",
+    "data:destroy": "npx tsx api/seeder.ts -d"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/express": "^5.0.0",
     "@types/node": "^22.9.0",
     "concurrently": "^9.1.0",
@@ -21,6 +24,7 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.21.1",
     "mongodb": "^6.10.0",
     "mongoose": "^8.8.1"
