@@ -2,7 +2,6 @@ import dotenv from "dotenv";
 dotenv.config();
 import express, { Request, Response } from "express";
 import { connectDB } from "./config/db";
-import products from "./data/products";
 import productRoutes from "./routes/productRoutes";
 import { errorHandler, notFound } from "./middleware/errorMiddleware";
 
