@@ -6,7 +6,6 @@ export const notFound = (
   res: Response,
   next: NextFunction
 ) => {
-  console.log("error notFound");
   if (error.name === "CastError" && error.kind === "ObjectId") {
     res.status(404);
     const newError = new Error(`Not Found - ${req.originalUrl}`);
