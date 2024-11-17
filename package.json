@@ -11,7 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "npx tsx api/seeder.ts",
     "data:destroy": "npx tsx api/seeder.ts -d",
-    "build": "npm install"
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
   "license": "MIT",
