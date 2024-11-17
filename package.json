@@ -1,5 +1,5 @@
 {
-  "name": "proshop",
+  "name": "express-to-render",
   "version": "1.0.0",
   "description": "eCommerce app with MERN",
   "main": "server.ts",
