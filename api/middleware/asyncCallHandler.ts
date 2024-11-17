@@ -8,10 +8,10 @@
 import { Request, Response, NextFunction } from "express";
 
 type AsyncFunction = (...props: any) => Promise<any>;
-const asyncHandler =
+const asyncCallHandler =
   <T extends AsyncFunction>(fn: T) =>
   (req: Request, res: Response, next: NextFunction) => {
     Promise.resolve(fn(req, res, next)).catch(next);
   };
 
-export default asyncHandler;
+export default asyncCallHandler;
