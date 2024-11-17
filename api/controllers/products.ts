@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import asyncHandler from "../middleware/asyncHandler.ts";
+import asyncHandler from "../middleware/asyncHandler";
 import Product from "../models/productModel";
 
 export const getAllProducts = asyncHandler(async (_, res: Response) => {
