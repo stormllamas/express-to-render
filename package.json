@@ -10,7 +10,8 @@
     "client": "npm start frontend --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "npx tsx api/seeder.ts",
-    "data:destroy": "npx tsx api/seeder.ts -d"
+    "data:destroy": "npx tsx api/seeder.ts -d",
+    "build": "npm install"
   },
   "author": "",
   "license": "MIT",
